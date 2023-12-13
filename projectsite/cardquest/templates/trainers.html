@@ -1,13 +1,38 @@
 {% extends 'base.html' %}
 
 {% block navbar %}
-<section class="navbar">
+  <section class="navbar">
     <a href='{% url "home" %}' class="btn"> Home </a>
     <a href='{% url "trainer_list" %}' class="btn" id="active"> Trainer </a>
     <a href='{% url "pokemon-card" %}' class="btn"> Pokemon Card </a>
     <a href='{% url "collection" %}' class="btn"> Collection </a>
-</section>
-{% endblock %}
+  </section>
+{% endblock navbar %}
 
 {% block content %}
-{% endblock %}
+<section class="trainers-container">
+  <table class="styled-table">
+    <tbody>
+
+      <tr>
+        <th>Trainer Name</th>
+        <th>Birthdate</th>
+        <th>Location</th>
+        <th>Email</th>
+      </tr>
+
+      {% for t in trainer %}
+        <tr>
+          <td>{{ t.name }}</td>
+          <td>{{ t.birthdate }}</td>
+          <td>{{ t.location }}</td>
+          <td>{{ t.email }}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</section>
+
+
+
+{% endblock content %}
