@@ -14,13 +14,11 @@
     <title>{% block title %} CardQuest Master {% endblock %}</title>
   </head>
   <body>
-    <!-- NAVBAR-->
-      {% block navbar %}
-      {% endblock %}
-    <!--CONTENT -->
+    {% block navbar %}
+    {% endblock navbar %}
     <main>
-       {% block content %}
+      {% block content %}
       {% endblock %}
     </main>
+    {% include 'includes/footer.html' %}    
   </body>
-{% include 'includes/footer.html' %}    
