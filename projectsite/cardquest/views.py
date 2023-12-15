@@ -75,7 +75,7 @@ class PokemonCardList(ListView):
     model = PokemonCard
     context_object_name = 'pokemon-card'
     template_name = 'pokemon-card.html'
-    paginate_by = 20
+    paginate_by = 10
 
 
 class PokemonCardCreateView(CreateView):
